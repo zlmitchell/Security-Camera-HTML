@@ -9,5 +9,5 @@ This is used mainly to watch the cameras not to record or edit snapshots.
 
 Tested and working IP Cameras:
 
-Foscam
-Axis
+- Foscam
+- Axis
