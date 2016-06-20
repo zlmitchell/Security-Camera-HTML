@@ -10,4 +10,16 @@ This is used mainly to watch the cameras not to record or edit snapshots.
 Tested and working IP Cameras:
 
 - Foscam
+  - Get Available Resolutions
+    - http://CAMERA-IP/axis-cgi/param.cgi?cmd=getvideoattr
+  - Image
+    - http://CAMERA-IP/CGIProxy.fcgi?cmd=snapPicture2&t=
+  - Video
+    - http://CAMERA-IP/CGIStream.cgi?cmd=GetMJStream
 - Axis
+  - Get Available Resolutions
+    - http://CAMERA-IP/axis-cgi/param.cgi?action=list&group=Properties.Image.Resolution
+  - Image
+    - http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=
+  - Video
+    - http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720
