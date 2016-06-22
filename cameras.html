@@ -8,20 +8,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('a.fancybox').fancybox();
+    });
+    </script>
     <style>
       .container {
         padding-left: 0;
         margin-left: -10px;
-		width: 100%;
+        width: 100%;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .fancybox-inner {
+          overflow: hidden !important;
+      }
+      .fancybox-skin {
+          background-color: #000;
       }
       .row {
         margin:0;
         padding-top: 30px;
-      }
-      .lb-outerContainer {
-        background-color: #000;
       }
       body {
         background-color: #000;
@@ -39,62 +66,103 @@
       <div class="container">
         <div class="row">
          <div class="col-lg-3 text-center">
-            <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-              <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-              <h3> LABEL </h3>
+            <a href="http://172.21.3.167/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="1st Floor Lobby">
+              <img src="http://172.21.3.167/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="1st Floor Lobby" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> 1st Floor Lobby </h3>
             </a>
           </div>
           <div class="col-lg-3 text-center">
-             <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-               <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-               <h3> LABEL </h3>
-             </a>
-           </div>
-           <div class="col-lg-3 text-center">
-              <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-                <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-                <h3> LABEL </h3>
-              </a>
-            </div>
-            <div class="col-lg-3 text-center">
-               <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-                 <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-                 <h3> LABEL </h3>
-               </a>
-             </div>
+            <a href="http://172.21.3.169/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Hallway First Floor">
+              <img src="http://172.21.3.169/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="Hallway First Floor" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Hallway First Floor </h3>
+            </a>
+          </div>
+          <div class="col-lg-3 text-center">
+            <a href="http://172.21.3.161/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Front Door 2nd Floor (209)">
+              <img src="http://172.21.3.161/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="Front Door 2nd Floor (209)" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Front Door 2nd Floor (209) </h3>
+            </a>
+          </div>
+          <div class="col-lg-3 text-center">
+            <a href="http://172.21.3.165/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="2nd Floor Lobby">
+              <img src="http://172.21.3.165/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="2nd Floor Lobby" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> 2nd Floor Lobby </h3>
+            </a>
+          </div>
         </div>
         <div class="row">
           <div class="col-lg-3 text-center">
-             <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-               <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-               <h3> LABEL </h3>
-             </a>
-           </div>
-         <div class="col-lg-3 text-center">
-            <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-              <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-              <h3> LABEL </h3>
+            <a href="http://172.21.3.160/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Kiln Room">
+              <img src="http://172.21.3.160/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="Kiln Room" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Kiln Room </h3>
             </a>
           </div>
           <div class="col-lg-3 text-center">
-             <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-               <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-               <h3> LABEL </h3>
-             </a>
-           </div>
-           <div class="col-lg-3 text-center">
-              <a href="http://CAMERA-IP/axis-cgi/mjpg/video.cgi?resolution=1280x720" data-lightbox="image-1" data-title="LABEL">
-                <img src="http://CAMERA-IP/axis-cgi/jpg/image.cgi?resolution=480x270&t=" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
-                <h3> LABEL </h3>
-              </a>
-            </div>
+            <a href="http://172.21.3.171/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Glass/Metals">
+              <img src="http://172.21.3.171/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="Glass/Metals" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Glass/Metals </h3>
+            </a>
+          </div>
+          <div class="col-lg-3 text-center">
+            <a href="http://172.21.3.168/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Welding Shop">
+              <img src="http://172.21.3.168/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="Welding Shop" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Welding Shop </h3>
+            </a>
+          </div>
+          <div class="col-lg-3 text-center">
+            <a href="http://172.21.3.170/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Wood Shop">
+              <img src="http://172.21.3.170/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="Wood Shop" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Wood Shop </h3>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <a href="http://172.21.3.164/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Exterior North">
+              <img src="http://172.21.3.164/axis-cgi/jpg/image.cgi?resolution=640x360&t=" alt="Exterior North" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Exterior North </h3>
+            </a>
+          </div>
+          <div class="col-lg-4 text-center">
+            <a href="http://172.21.3.162/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Stairwell">
+              <img src="http://172.21.3.162/axis-cgi/jpg/image.cgi?resolution=480x270&t=" alt="Stairwell" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Stairwell </h3>
+            </a>
+          </div>
+          <div class="col-lg-4 text-center">
+            <a href="http://172.21.3.163/axis-cgi/mjpg/video.cgi?resolution=1280x720" class="fancybox fancybox.iframe" title="Exterior South">
+              <img src="http://172.21.3.163/axis-cgi/jpg/image.cgi?resolution=640x360&t=" alt="Exterior South" alt="Exterior South" onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 300)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' width="480" height="270" ></img>
+              <h3> Exterior South </h3>
+            </a>
+          </div>
         </div>
       </div>
 
+      <script type="text/javascript">
+        $(document).ready(function(){
+        $(".fancybox").fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        maxWidth    : 1280,
+        maxHeight    : 720,
+        width        : '100%',
+        height        : '100%',
+        autoscale    : true,
+        padding : 10,
+        showCloseButton : true,
+        iframe : {
+        preload: false,
+        },
+        helpers : {
+          overlay : {
+            css : { 'overflow' : 'hidden' }
+          },
+        }
+        });
+        });
+      </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-
   </body>
   <!--Website Created by Zach Mitchell-->
 </html>
