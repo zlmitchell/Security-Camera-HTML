@@ -1,5 +1,5 @@
 <h1>Security Camera HTML</h1>
-<h3>Bootstrap, Fancybox, (lightbox alternative)</h3>
+<h3>Bootstrap, Fancybox (lightbox alternative)</h3>
 
 I have created a self contained webpage in order to show the current feed from the cameras.
 
